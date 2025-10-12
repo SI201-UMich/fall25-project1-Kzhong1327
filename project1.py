@@ -74,11 +74,60 @@ def write_results_to_csv(results, filename):
 
 
 
+def calculate_flipper_percentage(data, threshold=200):
+
+    result2 = {}
+
+    for penguin in data:
+        species = penguin['species']
+        sex = penguin['sex']
+        flipper = penguin['flipper_length_mm']
+
+        if not species or not sex or flipper is None:
+            continue
+
+        key = (species, sex)
+        if key not in result2:
+            result2[key] = {'total': 0, 'above': 0}
+
+        result2[key]['total'] += 1
+        if flipper > threshold:
+            result2[key]['above'] += 1
+
+    for key, counts in result2.items():
+        total = counts['total']
+        above = counts['above']
+        percentage = round((above / total) * 100, 2)
+        result2[key]['percentage_above'] = percentage
+
+    return result2
+
+
+def write_results_to_txt(results, filename, threshold=200):
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(f"Percentage of Penguins Above {threshold} mm Flipper Length\n")
+        file.write("=" * 60 + "\n\n")
+
+        for (species, sex), stats in results.items():
+            file.write(f"Species: {species}\n")
+            file.write(f"Sex: {sex}\n")
+            file.write(f"Percentage above {threshold} mm: {stats['percentage_above']}%\n")
+            file.write(f"Total penguins in group: {stats['total']}\n")
+            file.write(f"Above threshold: {stats['above']}\n")
+            file.write("-" * 40 + "\n")
+
+    print(f"Results saved to {filename}")
+
+
+
+
 def main():
     filename = 'penguins.csv' 
     data = read_csv_file(filename)
     results = calculate_species_averages(data)
     write_results_to_csv(results, 'penguin_species_summary.csv')
+    results2 = calculate_flipper_percentage(data, threshold=200)
+    write_results_to_txt(results2, 'penguin_flipper_percentage.txt', threshold=200)
 
 
 

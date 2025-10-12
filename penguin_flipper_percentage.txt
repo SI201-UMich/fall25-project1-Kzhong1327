@@ -1,0 +1,51 @@
+Percentage of Penguins Above 200 mm Flipper Length
+============================================================
+
+Species: Adelie
+Sex: male
+Percentage above 200 mm: 8.22%
+Total penguins in group: 73
+Above threshold: 6
+----------------------------------------
+Species: Adelie
+Sex: female
+Percentage above 200 mm: 1.37%
+Total penguins in group: 73
+Above threshold: 1
+----------------------------------------
+Species: Adelie
+Sex: NA
+Percentage above 200 mm: 0.0%
+Total penguins in group: 5
+Above threshold: 0
+----------------------------------------
+Species: Gentoo
+Sex: female
+Percentage above 200 mm: 100.0%
+Total penguins in group: 58
+Above threshold: 58
+----------------------------------------
+Species: Gentoo
+Sex: male
+Percentage above 200 mm: 100.0%
+Total penguins in group: 61
+Above threshold: 61
+----------------------------------------
+Species: Gentoo
+Sex: NA
+Percentage above 200 mm: 100.0%
+Total penguins in group: 4
+Above threshold: 4
+----------------------------------------
+Species: Chinstrap
+Sex: female
+Percentage above 200 mm: 2.94%
+Total penguins in group: 34
+Above threshold: 1
+----------------------------------------
+Species: Chinstrap
+Sex: male
+Percentage above 200 mm: 50.0%
+Total penguins in group: 34
+Above threshold: 17
+----------------------------------------
