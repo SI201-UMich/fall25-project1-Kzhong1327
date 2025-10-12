@@ -15,6 +15,10 @@ def read_csv_file(filename):
                 row['bill_length_mm'] = float(row['bill_length_mm'])
             except:
                 row['bill_length_mm'] = None
+            try:
+                row['flipper_length_mm'] = float(row['flipper_length_mm'])
+            except:
+                row['flipper_length_mm'] = None
             data.append(row)
     return data
 
