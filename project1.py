@@ -1,3 +1,10 @@
+# Name: Ke Zhpng
+# Student ID: 49628069
+# Email: kzhong@umich.edu
+# Who or what you worked with on this homework (including generative AI like ChatGPT): Chatgpt
+# If you worked with generative AI also add a statement for how you used it.  
+# Asked ChatGPT hints for debugging
+
 import csv
 
 
